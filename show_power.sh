@@ -17,19 +17,22 @@ while true; do
     #echo "Battery Percentage: $battery_percentage%"
 
     # Check if battery percentage is below the threshold_down
-    if [ "$battery_percentage" -lt "$threshold_down" ]; then
-        # Send a notification
-        notify-send "Low Battery Warning" "Battery is at $battery_percentage%. Please connect to a power source."
+    if [ "$battery_percentage" -le "$threshold_down" ]; then
+        if acpi -a | grep -q "off-line"; then
+            # Send a notification
+            notify-send "Low Battery Warning" "Battery is at $battery_percentage%. Please connect to a power source."
+        fi
     fi
 
 
     # Check if battery percentage is more than threshold_up
-    if [ "$battery_percentage" -gt "$threshold_up" ]; then
-        # Send a notification
-        notify-send "Battery Charged" "Battery is at $battery_percentage%. Please unplug the battery."
+    if [ "$battery_percentage" -ge "$threshold_up" ]; then
+        if acpi -a | grep -q "on-line"; then
+            # Send a notification
+            notify-send "Battery Charged" "Battery is at $battery_percentage%. Please unplug the battery."
+        fi
     fi
 
     # Sleep for 5 minutes before checking again (adjust as needed)
     sleep 300
 done
-
