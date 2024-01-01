@@ -21,6 +21,10 @@ while true; do
         if acpi -a | grep -q "off-line"; then
             # Send a notification
             notify-send "Low Battery Warning" "Battery is at $battery_percentage%. Please connect to a power source."
+            # Generate Beep sound
+            echo -e '\a'
+            sleep 0.5
+            echo -e '\a'
         fi
     fi
 
@@ -30,6 +34,10 @@ while true; do
         if acpi -a | grep -q "on-line"; then
             # Send a notification
             notify-send "Battery Charged" "Battery is at $battery_percentage%. Please unplug the battery."
+            # Generate Beep sound            
+            echo -e '\a'
+            sleep 0.5
+            echo -e '\a'
         fi
     fi
 
