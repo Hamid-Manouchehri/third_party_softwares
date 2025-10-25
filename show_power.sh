@@ -1,4 +1,6 @@
 #!/bin/bash
+# Add it to the .bashrc file:
+# export PATH="$HOME/PATH/TO/THE/SCRIPT:$PATH"
 
 # Set the threshold_up for battery percentage
 threshold_up=80
