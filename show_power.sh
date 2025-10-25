@@ -1,6 +1,7 @@
 #!/bin/bash
 # Add it to the .bashrc file:
 # export PATH="$HOME/PATH/TO/THE/SCRIPT:$PATH"
+# install acpi package: "sudo apt update && sudo apt install acpi"
 
 # Set the threshold_up for battery percentage
 threshold_up=80
