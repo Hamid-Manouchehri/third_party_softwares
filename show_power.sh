@@ -1,6 +1,7 @@
 #!/bin/bash
 # Add it to the .bashrc file:
-# export PATH="$HOME/PATH/TO/THE/SCRIPT:$PATH"
+# export PATH="$HOME/PATH/TO/THE/SCRIPT:$PATH" e.g. export PATH="$HOME/softwares:$PATH" if this file is located in "softwares" at home dir.
+# Note: Give permission to the file for execution.
 # install acpi package: "sudo apt update && sudo apt install acpi"
 
 # Set the threshold_up for battery percentage
